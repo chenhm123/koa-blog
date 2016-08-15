@@ -6,4 +6,6 @@ module.exports = function(app){
         .get('/login',mainCtrl.login)
         .get('/reg',mainCtrl.reg)
         .get('/logout',mainCtrl.logout);
+
+    app.post('/reg',mainCtrl.saveUser);
 };
