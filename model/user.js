@@ -35,24 +35,25 @@ User.prototype.save = function(callback){
         })
     })
 }
-User.get = function(name,callback){
+User.get = function* (name){
     mongodb.open(function(err,db){
         if(err){
-            return callback(err);
+            return err;
         }
         db.collection('users',function(err,collection){
             if(err){
                 mongodb.close();
-                return callback(err);
+                return err;
             }
             collection.findOne({
                 name:name
             },function(err,user){
                 mongodb.close();
                 if(err){
-                    return callback(err);
+                    return err;
                 }else{
-                    callback(null,user);
+                    console.log(123)
+                    return user;
                 }
             })
         })
