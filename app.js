@@ -37,6 +37,7 @@ xtplApp(app,{
 
 
 var session = require('koa-session');
+app.keys = ['some secret hurr'];
 app.use(session(app));
 
 

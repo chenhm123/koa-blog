@@ -1,9 +1,9 @@
 /**
- * Created by wb-chm174910 on 2016/8/16.
+ * Created by wb-chm174910 on 2016/8/17.
  */
-var db = require('mysql-promise')();
+var mysql = require('mysql-promise')();
 
-db.configure({
+mysql.configure({
     "host": "localhost",
     "user": "root",
     "password": "",
@@ -12,16 +12,14 @@ db.configure({
 });
 
 
-db.sql = function(query, params) {
-    //console.log(query + params);
-    return db.query(query, params).then(function(data) {
+mysql.sql = function(query, params) {
+    return mysql.query(query, params).then(function(data) {
         return data[0];
     }, function(e) {
         var error = new Error(e);
         error.message += '\nSql:' + query + '\nParams:' + JSON.stringify(params);
         throw error;
-        return error;
     });
 };
 
-exports.db = db;
+exports.mysql = mysql;

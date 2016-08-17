@@ -4,7 +4,7 @@
 var db = require('./test')
 
 exports.test = function* test(){
-    var sql = 'select * from test';
+    var sql = 'select * from users';
     var result = yield db.db.sql(sql);
 
     return result;
