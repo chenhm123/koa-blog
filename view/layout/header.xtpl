@@ -21,5 +21,10 @@
   <span><a title="注册" href="/reg">register</a></span>
 {{/if}}
 </nav>
-
+{{#if(success)}}
+  <div>{{success}}</div>
+{{/if}}
+{{#if(error)}}
+  <div>{{error}}</div>
+{{/if}}
 <article>

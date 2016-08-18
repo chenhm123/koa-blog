@@ -37,9 +37,10 @@ xtplApp(app,{
 
 
 var session = require('koa-session');
+var flash = require('koa-connect-flash');
 app.keys = ['some secret hurr'];
 app.use(session(app));
-
+app.use(flash());
 
 //post body 解析
 var bodyParser = require('koa-bodyparser');

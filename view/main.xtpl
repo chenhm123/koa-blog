@@ -1,3 +1,10 @@
 {{include ("./layout/header")}}
-这是主页
+{{#each(posts)}}
+    <p><h2><a href="#">{{title}}</a></h2></p>
+      <p class="info">
+        作者：<a href="#">{{name}}</a> |
+        日期：{{time}}
+      </p>
+      <p>{{post}}</p>
+{{/each}}
 {{include ("./layout/footer")}}

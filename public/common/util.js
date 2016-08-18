@@ -23,3 +23,23 @@ mysql.sql = function(query, params) {
 };
 
 exports.mysql = mysql;
+
+var date = {};
+date.getCurrentTime = function(format){
+    return date.format(new Date(),format)
+}
+
+date.format = function (date,format) {
+    var year = date.getFullYear(),
+        month = date.getMonth() +1 < 10? '0'+date.getMonth():date.getMonth(),
+        day = date.getDate() < 10 ? '0'+date.getDate():date.getDate(),
+        hours = date.getHours() < 10? '0'+date.getHours():date.getHours(),
+        minutes = date.getMinutes() < 10? '0'+date.getMinutes():date.getMinutes(),
+        seconds = date.getSeconds() < 10? '0'+date.getSeconds():date.getSeconds();
+
+    format = format.replace(/yyyy/,year).replace(/MM/,month).replace(/dd/,day).replace(/hh/,hours)
+        .replace(/mm/,minutes).replace(/ss/,seconds);
+    return format
+}
+
+exports.date = date;
