@@ -1,7 +1,9 @@
 /**
  * Created by wb-chm174910 on 2016/8/18.
  */
-var util = require('../public/common/util');
+var util = require('../public/common/util'),
+    markdown = require('markdown').markdown;
+
 
 function Post(name,title,post){
     this.name = name;
@@ -26,6 +28,7 @@ Post.getPostByUserName = function* (name){
     if(dbPost.length !== 0){
         dbPost.forEach(function(post){
             post.time = util.date.format(post.time,'yyyy-MM-dd hh:mm:ss');
+            // post.post = markdown.toHTML(post.post);
         })
         return dbPost;
     }else{
@@ -37,6 +40,7 @@ Post.getAll = function* (){
     if(dbPost.length !== 0){
         dbPost.forEach(function(post){
             post.time = util.date.format(post.time,'yyyy-MM-dd hh:mm:ss');
+            post.post = markdown.toHTML(post.post);
         })
         return dbPost;
     }else{

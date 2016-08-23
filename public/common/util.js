@@ -31,7 +31,7 @@ date.getCurrentTime = function(format){
 
 date.format = function (date,format) {
     var year = date.getFullYear(),
-        month = date.getMonth() +1 < 10? '0'+date.getMonth():date.getMonth(),
+        month = date.getMonth() +1 < 10? '0'+(date.getMonth()+1):(date.getMonth()+1),
         day = date.getDate() < 10 ? '0'+date.getDate():date.getDate(),
         hours = date.getHours() < 10? '0'+date.getHours():date.getHours(),
         minutes = date.getMinutes() < 10? '0'+date.getMinutes():date.getMinutes(),
