@@ -28,7 +28,8 @@ Post.getPostByUserName = function* (name){
     if(dbPost.length !== 0){
         dbPost.forEach(function(post){
             post.time = util.date.format(post.time,'yyyy-MM-dd hh:mm:ss');
-            // post.post = markdown.toHTML(post.post);
+            post.post = markdown.toHTML(post.post);
+            post.post = post.post.replace(/\n/g,'<br/>');
         })
         return dbPost;
     }else{
