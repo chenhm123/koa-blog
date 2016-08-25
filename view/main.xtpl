@@ -5,6 +5,6 @@
         作者：<a href="#">{{name}}</a> |
         日期：{{time}}
       </p>
-     <p>{{{post}}}</p>
+     {{{post}}}
 {{/each}}
 {{include ("./layout/footer")}}
