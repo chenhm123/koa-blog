@@ -25,6 +25,7 @@
     "mini-logger": "1.0.0",
     "mongodb": "^2.2.5",
     "mongoose": "^4.5.9",
+    "multer": "^1.2.0",
     "mysql-promise": "^3.0.0",
     "underscore": "1.7.0",
     "xtemplate": "4.2.4",

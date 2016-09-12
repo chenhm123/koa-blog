@@ -1,3 +1,4 @@
+/*
 *{padding:0;margin:0;}
 body{width:600px;margin:2em auto;padding:0 2em;font-size:14px;font-family:"Microsoft YaHei";}
 p{line-height:24px;margin:1em 0;}
@@ -8,4 +9,10 @@ nav a:hover{background-color:#ff0000;color:#f9f9f9;-webkit-transition:color .2s 
 article{font-size:16px;padding-top:.5em;}
 article a{color:#dd0000;text-decoration:none;}
 article a:hover{color:#333333;text-decoration:underline;}
-.info{font-size:14px;}
+.info{font-size:14px;}*/
+
+.contain {overflow:hidden;position:relative;}
+.contain nav {position:fixed;top:0;left:0;bottom:0;box-shadow: 1px 1px 1px 1px #ddd}
+.contain nav .desc {margin-top:50px;text-align: center}
+.contain nav .nav {margin-top:20px;text-align: center;}
+.contain .main{padding-top:20px;padding-left:20px;}
